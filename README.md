@@ -32,7 +32,7 @@
 
 **My personal [NUR](https://github.com/nix-community/NUR) repository**
 
-It provides a pre-compiled binary cache for NixOS unstable.
+It provides a pre-compiled binary cache for Nixpkgs unstable, NixOS unstable and Nixos 24.05.
 To use it add the following lines to your nix.conf
 
 ```
