@@ -23,17 +23,22 @@
 ## README template
 -->
 
+<!-- Remove this if you don't use github actions -->
+![Build and populate cache](https://github.com/gigamonster256/nur-packages/workflows/Build%20and%20populate%20cache/badge.svg)
+[![Cachix Cache](https://img.shields.io/badge/cachix-gigamonster256-blue.svg)](https://gigamonster256.cachix.org)
+
+
 # nur-packages
 
 **My personal [NUR](https://github.com/nix-community/NUR) repository**
 
-<!-- Remove this if you don't use github actions -->
-![Build and populate cache](https://github.com/gigamonster256/nur-packages/workflows/Build%20and%20populate%20cache/badge.svg)
+It provides a pre-compiled binary cache for NixOS unstable.
+To use it add the following lines to your nix.conf
 
-<!--
-Uncomment this if you use travis:
+```
+substituters = https://gigamonster256.cachix.org
+trusted-public-keys = gigamonster256.cachix.org-1:ySCUrOkKSOPm+UTipqGtGH63zybcjxr/Wx0UabASvRc=
+```
 
-[![Build Status](https://travis-ci.com/<YOUR_TRAVIS_USERNAME>/nur-packages.svg?branch=master)](https://travis-ci.com/<YOUR_TRAVIS_USERNAME>/nur-packages)
--->
-[![Cachix Cache](https://img.shields.io/badge/cachix-gigamonster256-blue.svg)](https://gigamonster256.cachix.org)
+
 
