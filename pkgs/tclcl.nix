@@ -1,6 +1,6 @@
 {
   lib,
-  stdenv,
+  gcc11Stdenv,
   autoreconfHook,
   fetchurl,
   tk,
@@ -11,7 +11,7 @@
 }: let
   version = "1.20";
 in
-  stdenv.mkDerivation {
+  gcc11Stdenv.mkDerivation {
     inherit version;
 
     name = "tclcl-${version}";
@@ -21,7 +21,7 @@ in
       sha256 = "0y6w0vrszhmggq8j20phsg2h9n12hjzi0zlawllk5hfin721xzb4";
     };
 
-    CFLAGS = "-DUSE_INTERP_ERRORLINE -DUSE_INTERP_RESULT -Wno-error=reserved-user-defined-literal";
+    CFLAGS = "-DUSE_INTERP_ERRORLINE -DUSE_INTERP_RESULT";
 
     postPatch =
       ''

@@ -1,6 +1,6 @@
 {
   lib,
-  stdenv,
+  gcc11Stdenv,
   fetchurl,
   autoconf,
   tk,
@@ -13,7 +13,7 @@
 }: let
   version = "2.35";
 in
-  stdenv.mkDerivation {
+  gcc11Stdenv.mkDerivation {
     inherit version;
 
     name = "ns2-${version}";
@@ -24,7 +24,6 @@ in
     };
 
     patches = map fetchurl (import ./debian-patches.nix) ++ [./nix_nixnode.patch ./disable_memdebug.patch];
-    CFLAGS = "-Wno-error=reserved-user-defined-literal";
     CXXFLAGS = "-std=c++98";
 
     postPatch = ''
