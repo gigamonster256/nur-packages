@@ -34,7 +34,7 @@ in
     # do not build the conflicting tools/random.cc file
     # running full autoreconf breaks an existing autoconf.h.in
     preConfigure = ''
-      sed -i -e 's/tools\/random.o//g' Makefile.in Makefile.vc allinone/install
+      sed -i -e 's/tools\/random.o//g' Makefile.in makefile.vc allinone/install
       ${autoconf}/bin/autoconf -f
     '';
 
